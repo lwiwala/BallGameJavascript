@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src * blob:">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>Ball Game</title>
+        <style>
+        	body {
+        		margin: 0;
+        		background-color: #000;
+        		color: #FFF;
+        	}
+
+        	#game {
+        		background-image: url('ground.png');
+        		height: 500px;
+        	}
+
+        	#squares div {
+        		float: left;
+        		box-sizing: border-box;
+/*        		border-width: 0 1px 1px 0;
+        		border-style: solid;
+        		border-color: #f7f7f7;*/
+        	}
+
+        	#food div {
+        		position: absolute;
+        		background-image: url('food.png');
+        		background-size: cover;
+        	}
+
+        	.blinking {
+        		background-image: url('crate_18.png');
+        		background-size: cover;
+				animation: blinker 1s linear infinite;
+        	}
+
+        	.light {
+        		/*background-color: red;*/
+        		background-image: url('crate_08.png');
+        		background-size: cover;
+        	}
+
+        	@keyframes blinker {
+			  50% {
+			    /*background-color: orange;*/
+			    opacity: 0;
+			  }
+			}
+
+			#box {
+        		background-image: url('ball2.png');
+        		background-size: cover;
+			}
+
+			#message {
+				position: absolute;
+				box-sizing: border-box;
+				top: 200px;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				font-size: 24px;
+				background-color: rgba(0, 0, 0, 0.2);
+				padding: 24px;
+				display: none;
+				z-index: 100;
+			}
+
+			#short_message {
+				position: absolute;
+				box-sizing: border-box;
+				top: 24px;
+				right: 24px;
+				text-align: center;
+				font-size: 24px;
+				background-color: rgba(0, 0, 0, 0.2);
+				padding: 24px;
+				display: none;
+				z-index: 100;
+			}
+        </style>
+    </head>
+    <body>
+        <div class="app" style="max-width: 364px;">
+            <div id="game" style="position: relative;">
+                <div id="box" style="position: absolute; height: 20px; width: 20px; z-index: 1000;"></div>
+                <div id="squares" style="position: absolute;"></div>
+                <div id="food" style="position: absolute;"></div>
+            </div>
+            <div id="message"></div>
+            <div id="short_message"></div>
+            <div id="output" style="clear:both; position: absolute; bottom: 10px; left: 10px;"></div>
+        </div>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
